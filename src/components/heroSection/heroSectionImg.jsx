@@ -8,6 +8,7 @@ export default function HeroSectionImg() {
     <Grid
       container
       item
+      mt={4}
       xs={12}
       md={6}
       sx={{

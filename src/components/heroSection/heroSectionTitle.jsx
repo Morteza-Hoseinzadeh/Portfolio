@@ -1,9 +1,16 @@
-import { Button, Grid, Typography, useTheme } from "@mui/material";
+import {
+  Button,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import React from "react";
 import { IconArrowDownRight } from "@tabler/icons-react";
 
 export default function HeroSectionTitle() {
   const theme = useTheme();
+  const matchMdDown = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Grid
       container
@@ -19,21 +26,24 @@ export default function HeroSectionTitle() {
         p: 3,
       }}
     >
-      <Typography variant="h3" component="p">
+      <Typography variant={!matchMdDown ? "h3" : "h4"} component="p">
         Hello, It's Me
       </Typography>
-      <Typography variant="h2" component="p">
+      <Typography variant={!matchMdDown ? "h2" : "h4"} component="p">
         Morteza Hoseinzadeh
       </Typography>
-      <Typography variant="h3" component="p">
+      <Typography variant={!matchMdDown ? "h3" : "h4"} component="p">
         And I'm a
         <span
-          style={{ color: theme.palette.primary.primaryDark, marginLeft: 10 }}
+          style={{
+            color: theme.palette.primary.main,
+            marginLeft: 10,
+          }}
         >
           Frontend Developer
         </span>
       </Typography>
-      <Typography variant="h6" component="p">
+      <Typography variant="h6" component="p" mt={2}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum non
         eaque perspiciatis impedit mollitia possimus vitae, ipsa rerum
         exercitationem asperiores tempora, qui saepe repudiandae.
