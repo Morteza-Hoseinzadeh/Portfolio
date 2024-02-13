@@ -42,6 +42,7 @@ export default function HeroSectionTitle() {
         >
           Frontend Developer
         </span>
+        ☃️
       </Typography>
       <Typography variant="h6" component="p" mt={2}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum non

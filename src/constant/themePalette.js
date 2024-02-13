@@ -10,14 +10,14 @@ export const theme = createTheme({
     },
     secondary: {
       main: "#fff",
-      secondary: "rgba(255, 255, 255, 0.7)",
+      light: "rgba(255, 255, 255, 0.7)",
       dark: "#252525",
       disabled: "rgba(255, 255, 255, 0.5)",
     },
     background: {
       backgroundColorLight: {
-        background: "#ffffff",
-        background: "linear-gradient(340deg, #eee 0%, #335c81 74%)",
+        backgroundColor: "#ffffff",
+        backgroundImage: "linear-gradient(340deg, #eee 0%, #335c81 74%)",
       },
       backgroundColorDark: {
         backgroundColor: "#2b4162",
