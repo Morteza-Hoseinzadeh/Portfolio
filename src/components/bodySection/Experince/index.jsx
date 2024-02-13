@@ -66,8 +66,9 @@ export default function Index() {
         alignItems="center"
         justifyContent="space-evenly"
       >
-        {experiences.map((item) => (
+        {experiences.map((item, index) => (
           <Grid
+            key={index}
             item
             xs={12}
             md={5}
@@ -90,8 +91,8 @@ export default function Index() {
                 }}
               />
               <Box>
-                {experiencesTitle.map((title) => (
-                  <Typography color={theme.palette.secondary.main}>
+                {experiencesTitle.map((title, index) => (
+                  <Typography color={theme.palette.secondary.main} key={index}>
                     <span style={{ color: theme.palette.secondary.light }}>
                       {capitalizeAndFormat(title) + ": "}
                     </span>
