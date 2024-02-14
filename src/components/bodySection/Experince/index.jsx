@@ -59,20 +59,20 @@ export default function Index() {
         mt={2}
         display="flex"
         alignItems="center"
-        justifyContent="space-evenly"
+        justifyContent="center"
       >
         {experiences.map((item, index) => (
           <Grid
             key={index}
             item
             xs={12}
-            md={5}
+            md={5.3}
             mt={matchMdDown ? 2 : 0}
             sx={{
               backgroundColor: theme.palette.primary.main,
               borderRadius: 5,
               p: 4,
-              mx: 2,
+              mx: 1,
               boxShadow: theme.palette.boxShadow.shadow,
             }}
           >

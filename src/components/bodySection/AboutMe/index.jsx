@@ -45,7 +45,7 @@ export default function Index() {
         mt={2}
         display="flex"
         alignItems="center"
-        width="92%"
+        width="90%"
         mx="auto"
       >
         <Grid
@@ -56,7 +56,6 @@ export default function Index() {
             backgroundColor: theme.palette.primary.main,
             borderRadius: 5,
             p: 4,
-            mx: 2,
             boxShadow: theme.palette.boxShadow.shadow,
           }}
         >
