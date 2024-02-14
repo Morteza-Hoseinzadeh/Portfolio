@@ -13,6 +13,7 @@ export default function Index() {
     start_work_experience: "2023-June",
     level: "Junior",
     phone: "+98906451808",
+    Email: "morteza.hosseinzadeh8413@gmail.com",
     english_level: "Advanced",
     education: "Student At Islamic Azad University Islamshahr Branch",
     field_of_study: "Software Engineering",
