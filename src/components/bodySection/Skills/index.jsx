@@ -96,6 +96,7 @@ export default function Index() {
           mx: "auto",
           mt: 2,
           borderRadius: 5,
+          boxShadow: theme.palette.boxShadow.shadow,
         }}
       >
         {skill.map((item, index) => (
@@ -114,6 +115,50 @@ export default function Index() {
             ))}
           </Grid>
         ))}
+      </Grid>
+      <Grid
+        container
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          backgroundColor: theme.palette.primary.main,
+          textAlign: matchMdDown ? "center" : "left",
+          width: "90%",
+          p: 4,
+          mx: "auto",
+          mt: 2,
+          borderRadius: 5,
+          boxShadow: theme.palette.boxShadow.shadow,
+        }}
+      >
+        <Grid
+          container
+          item
+          xs={12}
+          display="flex"
+          flexDirection="row"
+          flexWrap="wrap"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <Grid item xs={12} md={6}>
+            <Typography color={theme.palette.secondary.main}>
+              This Portfolio Developed With
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6} mt={matchMdDown ? 2 : 0}>
+            {[html, css, sass, js, react, redux, mui, npm, git, github].map(
+              (icon, index) => (
+                <img
+                  key={index}
+                  style={{ marginRight: 16 }}
+                  src={icon}
+                  alt={icon}
+                />
+              )
+            )}
+          </Grid>
+        </Grid>
       </Grid>
     </>
   );

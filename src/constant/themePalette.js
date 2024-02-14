@@ -5,6 +5,7 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: "#1d2951",
+      // main: "#035ca6",
       secondary: "#72a0c1",
       primaryLight: "#4682b4",
     },
@@ -13,6 +14,10 @@ export const theme = createTheme({
       light: "rgba(255, 255, 255, 0.7)",
       dark: "#333",
       disabled: "rgba(255, 255, 255, 0.5)",
+    },
+    boxShadow: {
+      shadow:
+        "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
     },
     background: {
       backgroundColorLight: {

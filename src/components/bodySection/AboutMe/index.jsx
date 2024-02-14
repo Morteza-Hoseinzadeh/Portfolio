@@ -56,6 +56,7 @@ export default function Index() {
             borderRadius: 5,
             p: 4,
             mx: 2,
+            boxShadow: theme.palette.boxShadow.shadow,
           }}
         >
           <Grid container>
