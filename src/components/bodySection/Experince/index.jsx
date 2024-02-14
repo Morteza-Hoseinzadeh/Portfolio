@@ -8,15 +8,10 @@ import img2 from "../../../assets/Company-Images/rahaco.webp";
 export default function Index() {
   const matchMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
-  const experiencesTitle = [
-    "company_name",
-    "working_time",
-    "area_of_expertise",
-    "total",
-  ];
+  const experiencesTitle = ["company", "date", "area_of_expertise", "total"];
   const experiences = [
     {
-      company_name: "Ariana labs",
+      company: "Ariana labs",
       start_date: "2023-December",
       end_date: "",
       area_of_expertise: "React Developer - Frontend Developer",
@@ -26,7 +21,7 @@ export default function Index() {
       img: img,
     },
     {
-      company_name: "Rahaco",
+      company: "Rahaco",
       start_date: "2023-June",
       end_date: "2023-October",
       area_of_expertise: "Frontend Developer - Web Designer",
@@ -61,7 +56,7 @@ export default function Index() {
 
       <Grid
         container
-        my={4}
+        mt={2}
         display="flex"
         alignItems="center"
         justifyContent="space-evenly"
@@ -72,10 +67,12 @@ export default function Index() {
             item
             xs={12}
             md={5}
+            mt={matchMdDown ? 2 : 0}
             sx={{
               backgroundColor: theme.palette.primary.main,
-              borderRadius: 12,
+              borderRadius: 5,
               p: 4,
+              mx: 2,
             }}
           >
             <Grid item sx={{ display: "flex", alignItems: "flex-start" }}>
@@ -98,7 +95,7 @@ export default function Index() {
                     </span>
                     {item[title]}
 
-                    {title === "working_time" &&
+                    {title === "date" &&
                       `${item.start_date ? item.start_date : "Unknown"} / 
                         ${item.end_date ? item.end_date : "Until now"}`}
                     {title === "total" && !item.total && "-"}
@@ -112,7 +109,7 @@ export default function Index() {
               color={theme.palette.secondary.main}
               mt={2}
             >
-              {item.company_name}
+              {item.company}
             </Typography>
 
             <Typography color={theme.palette.secondary.main}>
@@ -120,7 +117,7 @@ export default function Index() {
             </Typography>
 
             <Typography mt={2} color={theme.palette.secondary.light}>
-              Click To See More About {item.company_name}
+              Click To See More About {item.company}
             </Typography>
           </Grid>
         ))}
