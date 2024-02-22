@@ -38,7 +38,7 @@ export default function Index() {
           ml: matchMdDown ? 0 : 8,
         }}
       >
-        #About Me
+        #About
       </Typography>
       <Grid
         container

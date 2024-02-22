@@ -41,7 +41,7 @@ export default function Index() {
         alignItems: "center",
         backgroundColor: theme.palette.primary.main,
         textAlign: matchMdDown ? "center" : "left",
-        width: "90%",
+        width: matchMdDown ? "97%" : "90%",
         p: 4,
         mx: "auto",
         mt: 2,

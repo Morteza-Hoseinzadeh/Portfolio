@@ -12,8 +12,8 @@ export const theme = createTheme({
     secondary: {
       main: "#fff",
       light: "rgba(255, 255, 255, 0.7)",
+      grey: "rgba(255, 255, 255, 0.5)",
       dark: "#333",
-      disabled: "rgba(255, 255, 255, 0.5)",
     },
     boxShadow: {
       shadow:
