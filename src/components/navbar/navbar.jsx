@@ -12,8 +12,30 @@ import {
 } from "@mui/material";
 
 import { IconLanguage, IconMoon } from "@tabler/icons-react";
+import { Link } from "react-scroll";
 
-const pages = ["About", "Skills", "Portfolio", "Social", "Contact"];
+const pages = [
+  {
+    title: "About",
+    to: "AboutMe",
+  },
+  {
+    title: "Skills",
+    to: "MySkills",
+  },
+  {
+    title: "Experience",
+    to: "MyExperience",
+  },
+  {
+    title: "Social",
+    to: "MySocialMedia",
+  },
+  {
+    title: "Contact",
+    to: "ContactMe",
+  },
+];
 
 function Navbar() {
   const theme = useTheme();
@@ -37,7 +59,7 @@ function Navbar() {
         backdropFilter: "blur(6.3px)",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography
             variant="h4"
@@ -74,17 +96,26 @@ function Navbar() {
             }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: theme.palette.secondary.main,
-                  display: "block",
-                }}
+              <Link
+                activeClass="active"
+                to={page.to}
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-100}
               >
-                {page}
-              </Button>
+                <Button
+                  key={page.title}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: theme.palette.secondary.main,
+                    display: "block",
+                  }}
+                >
+                  {page.title}
+                </Button>
+              </Link>
             ))}
           </Box>
 
