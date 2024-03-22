@@ -89,7 +89,7 @@ export default function Index() {
         sx={{
           display: "flex",
           alignItems: "center",
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.primary.primaryMain,
           textAlign: matchMdDown ? "center" : "left",
           width: "90%",
           p: 4,
@@ -121,7 +121,7 @@ export default function Index() {
         sx={{
           display: "flex",
           alignItems: "center",
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.primary.primaryMain,
           textAlign: matchMdDown ? "center" : "left",
           width: "90%",
           p: 4,

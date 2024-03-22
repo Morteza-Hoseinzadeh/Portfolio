@@ -74,7 +74,7 @@ export default function Index() {
       <Grid
         container
         sx={{
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.primary.primaryMain,
           width: "90%",
           p: 4,
           m: "4px auto 16px",
@@ -124,13 +124,13 @@ export default function Index() {
           </Grid>
           <Grid container item display="flex" justifyContent="end" mt={2}>
             <Button
-              variant="contained"
+              variant="outlined"
               sx={{
-                color: theme.palette.secondary.dark,
+                color: theme.palette.primary.primaryLight,
                 outline: `1px solid ${theme.palette.primary.primaryLight}`,
                 mr: 2,
                 "&:hover": {
-                  backgroundColor: theme.palette.primary.primaryLight,
+                  boxShadow: theme.palette.boxShadow.shadow,
                 },
               }}
             >
@@ -138,10 +138,10 @@ export default function Index() {
             </Button>
 
             <Button
-              variant="outlined"
+              variant="contained"
               sx={{
                 backgroundColor: theme.palette.primary.primaryLight,
-                color: theme.palette.secondary.light,
+                color: theme.palette.primary.primaryMain,
                 "&:hover": {
                   backgroundColor: theme.palette.primary.primaryLight,
                 },

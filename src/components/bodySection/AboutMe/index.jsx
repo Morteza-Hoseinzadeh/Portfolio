@@ -31,7 +31,7 @@ export default function Index() {
       <Typography
         mt={8}
         variant={"h5"}
-        color={theme.palette.secondary.main}
+        color={theme.palette.primary.main}
         sx={{
           p: 1,
           textAlign: matchMdDown ? "center" : "left",
@@ -53,7 +53,7 @@ export default function Index() {
           xs={12}
           mt={matchMdDown ? 2 : 0}
           sx={{
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.primary.primaryMain,
             borderRadius: 5,
             p: 4,
             boxShadow: theme.palette.boxShadow.shadow,

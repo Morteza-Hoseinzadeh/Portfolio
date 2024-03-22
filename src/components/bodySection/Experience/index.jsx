@@ -69,7 +69,7 @@ export default function Index() {
             md={5.3}
             mt={matchMdDown ? 2 : 0}
             sx={{
-              backgroundColor: theme.palette.primary.main,
+              backgroundColor: theme.palette.primary.primaryMain,
               borderRadius: 5,
               p: 4,
               mx: 1,
