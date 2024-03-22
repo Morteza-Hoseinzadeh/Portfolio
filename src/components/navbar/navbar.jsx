@@ -95,7 +95,7 @@ function Navbar() {
               alignItems: "center",
             }}
           >
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Link
                 activeClass="active"
                 to={page.to}
@@ -103,6 +103,7 @@ function Navbar() {
                 smooth={true}
                 duration={500}
                 offset={-100}
+                key={index}
               >
                 <Button
                   key={page.title}

@@ -90,8 +90,8 @@ export default function Index() {
               />
               <Box>
                 {experiencesTitle.map((title, index) => (
-                  <Typography color={theme.palette.secondary.main} key={index}>
-                    <span style={{ color: theme.palette.secondary.light }}>
+                  <Typography color={theme.palette.secondary.dark} key={index}>
+                    <span style={{ color: theme.palette.secondary.grey }}>
                       {capitalizeAndFormat(title) + ": "}
                     </span>
                     {item[title]}
@@ -107,17 +107,17 @@ export default function Index() {
 
             <Typography
               variant="h6"
-              color={theme.palette.secondary.main}
+              color={theme.palette.secondary.dark}
               mt={2}
             >
               {item.company}
             </Typography>
 
-            <Typography color={theme.palette.secondary.main}>
+            <Typography color={theme.palette.secondary.dark}>
               {item.description}
             </Typography>
 
-            <Typography mt={2} color={theme.palette.secondary.light}>
+            <Typography mt={2} color={theme.palette.secondary.grey}>
               Click To See More About {item.company}
             </Typography>
           </Grid>

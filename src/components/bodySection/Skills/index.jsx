@@ -101,7 +101,7 @@ export default function Index() {
       >
         {skill.map((item, index) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-            <Typography variant="h6" color={theme.palette.secondary.main}>
+            <Typography variant="h6" color={theme.palette.secondary.dark}>
               {item.title}
             </Typography>
             {item.src.map((icon, idx) => (
@@ -142,7 +142,7 @@ export default function Index() {
           justifyContent="space-between"
         >
           <Grid item xs={12} md={6}>
-            <Typography color={theme.palette.secondary.main}>
+            <Typography color={theme.palette.secondary.dark}>
               This Portfolio Developed With
             </Typography>
           </Grid>

@@ -31,7 +31,7 @@ export default function Index() {
       <Typography
         mt={8}
         variant={"h5"}
-        color={theme.palette.primary.main}
+        color={theme.palette.secondary.main}
         sx={{
           p: 1,
           textAlign: matchMdDown ? "center" : "left",
@@ -79,11 +79,11 @@ export default function Index() {
                 {Object.keys(aboutMe).map((key, index) => (
                   <Typography
                     key={index}
-                    color={theme.palette.secondary.main}
+                    color={theme.palette.secondary.dark}
                     ml={matchMdDown ? 0 : 2}
                     mb={matchMdDown ? 1 : 0}
                   >
-                    <strong style={{ color: theme.palette.secondary.light }}>
+                    <strong style={{ color: theme.palette.secondary.dark }}>
                       {capitalizeAndFormat(key)}:
                     </strong>{" "}
                     {aboutMe[key]}
@@ -92,10 +92,10 @@ export default function Index() {
               </Box>
             </Grid>
             <Grid item xs={12} md={5} mt={matchMdDown ? 4 : 0}>
-              <Typography variant="h6" color={theme.palette.secondary.light}>
+              <Typography variant="h6" color={theme.palette.secondary.dark}>
                 Biography
               </Typography>
-              <Typography color={theme.palette.secondary.main}>
+              <Typography color={theme.palette.secondary.dark}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
                 nemo similique accusantium voluptatibus error, perspiciatis
                 repudiandae quo soluta quaerat exercitationem magni nam

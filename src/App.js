@@ -22,7 +22,7 @@ export default function App() {
           width: "100vw",
           height: "100%",
           backgroundSize: "cover",
-          backgroundColor: theme.palette.background.backgroundColorLight,
+          backgroundColor: theme.palette.background.backgroundColor,
         }}
       >
         <Navbar />

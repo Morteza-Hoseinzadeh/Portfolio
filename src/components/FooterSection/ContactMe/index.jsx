@@ -83,7 +83,7 @@ export default function Index() {
         }}
       >
         <Grid item xs={12} textAlign="center">
-          <Typography variant="h4" color={theme.palette.secondary.main}>
+          <Typography variant="h4" color={theme.palette.secondary.dark}>
             Let's Talk
             <strong> Together</strong>
           </Typography>
@@ -126,7 +126,7 @@ export default function Index() {
             <Button
               variant="contained"
               sx={{
-                color: theme.palette.secondary.main,
+                color: theme.palette.secondary.dark,
                 outline: `1px solid ${theme.palette.primary.primaryLight}`,
                 mr: 2,
                 "&:hover": {
@@ -141,7 +141,7 @@ export default function Index() {
               variant="outlined"
               sx={{
                 backgroundColor: theme.palette.primary.primaryLight,
-                color: theme.palette.secondary.main,
+                color: theme.palette.secondary.light,
                 "&:hover": {
                   backgroundColor: theme.palette.primary.primaryLight,
                 },

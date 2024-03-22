@@ -58,7 +58,7 @@ export default function Index() {
         justifyContent="space-between"
       >
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" color={theme.palette.secondary.main}>
+          <Typography variant="h6" color={theme.palette.secondary.dark}>
             Social Media
           </Typography>
         </Grid>
@@ -67,7 +67,7 @@ export default function Index() {
             <a href={item.url} target="_blank">
               <img src={item.img} alt={item.title} style={{ width: "70px" }} />
             </a>
-            <Typography textAlign="center" color={theme.palette.secondary.main}>
+            <Typography textAlign="center" color={theme.palette.secondary.dark}>
               {item.title}
             </Typography>
           </Grid>
