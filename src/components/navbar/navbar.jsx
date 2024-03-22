@@ -11,8 +11,9 @@ import {
   Typography,
 } from "@mui/material";
 
-import { IconLanguage, IconMoon } from "@tabler/icons-react";
+import { IconLanguage, IconMoon, IconSun } from "@tabler/icons-react";
 import { Link } from "react-scroll";
+import { updateTheme } from "../../constant/themePalette";
 
 const pages = [
   {
@@ -39,6 +40,7 @@ const pages = [
 
 function Navbar() {
   const theme = useTheme();
+  const [isDarkMode, setIsDarkMode] = React.useState(undefined);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -48,6 +50,18 @@ function Navbar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const handleDarkMode = () => {
+    const newDarkMode = !isDarkMode;
+    setIsDarkMode(newDarkMode);
+    localStorage.setItem("isDarkMode", JSON.stringify(newDarkMode));
+    window.location.reload();
+  };
+
+  React.useEffect(() => {
+    const storedDarkMode = localStorage.getItem("isDarkMode");
+    setIsDarkMode(storedDarkMode ? JSON.parse(storedDarkMode) : false);
+  }, [isDarkMode]);
 
   return (
     <AppBar
@@ -124,8 +138,11 @@ function Navbar() {
             <Button sx={{ color: theme.palette.secondary.main }}>
               <IconLanguage /> Translate
             </Button>
-            <Button sx={{ color: theme.palette.secondary.main }}>
-              <IconMoon />
+            <Button
+              sx={{ color: theme.palette.secondary.main }}
+              onClick={handleDarkMode}
+            >
+              {isDarkMode ? <IconSun /> : <IconMoon />}
             </Button>
           </Box>
         </Toolbar>
