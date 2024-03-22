@@ -21,9 +21,6 @@ input {
 input:focus {
   outline: none;
 }
-input::placeholder {
-  color: #404040;
-}
 
 textarea {
   position: relative;
@@ -42,9 +39,6 @@ textarea {
 }
 textarea:focus {
   outline: none;
-}
-textarea::placeholder {
-  color: #404040;
 }
 
 ::-webkit-scrollbar-track {
