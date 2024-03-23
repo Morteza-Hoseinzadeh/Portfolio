@@ -1,5 +1,9 @@
 import * as React from "react";
-import MenuIcon from "@mui/icons-material/Menu";
+
+// import { LinkReactRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+// Mui material imports
 import {
   Button,
   useTheme,
@@ -9,11 +13,19 @@ import {
   Toolbar,
   IconButton,
   Typography,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 
+// Icons
+import MenuIcon from "@mui/icons-material/Menu";
 import { IconLanguage, IconMoon, IconSun } from "@tabler/icons-react";
-import { Link } from "react-scroll";
-import { updateTheme } from "../../constant/themePalette";
+
+// Scroll link
+import LinkScroll from "react-scroll/modules/components/Link";
+
+// flags
+import { IR, GB, SA, FR, DE } from "country-flag-icons/react/3x2";
 
 const pages = [
   {
@@ -38,10 +50,48 @@ const pages = [
   },
 ];
 
+const flags = [
+  {
+    title: "United Kingdom",
+    svg: <GB style={{ width: "25px", marginRight: "10px" }} />,
+    url: "/en",
+  },
+  {
+    title: "Iran",
+    svg: <IR style={{ width: "25px", marginRight: "10px" }} />,
+    url: "/fa",
+  },
+  {
+    title: "Saudi Arabia",
+    svg: <SA style={{ width: "25px", marginRight: "10px" }} />,
+    url: "/sa",
+  },
+  {
+    title: "France",
+    svg: <FR style={{ width: "25px", marginRight: "10px" }} />,
+    url: "/fr",
+  },
+  {
+    title: "Germany",
+    svg: <DE style={{ width: "25px", marginRight: "10px" }} />,
+    url: "/de",
+  },
+];
+
 function Navbar() {
   const theme = useTheme();
   const [isDarkMode, setIsDarkMode] = React.useState(undefined);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -110,7 +160,7 @@ function Navbar() {
             }}
           >
             {pages.map((page, index) => (
-              <Link
+              <LinkScroll
                 activeClass="active"
                 to={page.to}
                 spy={true}
@@ -130,14 +180,49 @@ function Navbar() {
                 >
                   {page.title}
                 </Button>
-              </Link>
+              </LinkScroll>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Button sx={{ color: theme.palette.secondary.main }}>
+            <Button
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+              sx={{ color: theme.palette.secondary.main }}
+            >
               <IconLanguage /> Translate
             </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+              sx={{
+                display: "flex",
+                flexDirection: "colum",
+                alignItems: "flex-start",
+              }}
+            >
+              {flags.map((flag, i) => (
+                <Link
+                  to={flag.url}
+                  key={i}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <MenuItem onClick={handleClose}>
+                    {flag.svg}
+                    {flag.title}
+                  </MenuItem>
+                </Link>
+              ))}
+            </Menu>
+
             <Button
               sx={{ color: theme.palette.secondary.main }}
               onClick={handleDarkMode}

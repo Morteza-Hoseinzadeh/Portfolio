@@ -1,5 +1,14 @@
+import { Navigate } from "react-router-dom";
+
+const languages = ["en", "fa", "sa", "fr", "de"];
+const path = window.location.pathname;
+const language = path.split("/")[1];
+
 const routes = [
-    { path: "/", element: <h1>Home Page</h1> },
-]
+  {
+    path: "/",
+    element: <Navigate to={languages.includes(language) ? language : "en"} />,
+  },
+];
 
 export default routes;

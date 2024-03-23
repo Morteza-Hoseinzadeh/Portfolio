@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import routes from "./routes";
 
 // components
 import Navbar from "./components/navbar/navbar";
@@ -25,9 +27,21 @@ export default function App() {
           backgroundColor: theme.palette.background.backgroundColor,
         }}
       >
-        <Navbar />
-        <HeroSection />
-        <BodySection />
+        <Router>
+          <Navbar />
+          <HeroSection />
+          <BodySection />
+          <Routes>
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={route.path}
+                element={route.element}
+                replace={route.replace}
+              />
+            ))}
+          </Routes>
+        </Router>
       </Box>
     </ThemeProvider>
   );
